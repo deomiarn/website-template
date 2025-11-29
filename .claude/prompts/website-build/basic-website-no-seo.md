@@ -10,6 +10,14 @@
 
 ## INPUTS [EDIT HERE]
 
+Execute as many tasks as possible in parallel and use multiple instances of the same agent when possible to reduce time.
+After page structure and components are selected, create the page structure with the chosen components, then stop and show me the page structure and component selection for confirmation before proceeding to the next step.
+For branding, also adjust h1, h2, h3, p etc. in globals.css to ensure consistency across the entire website.
+Use sections with images regularly throughout the site—no galleries, just images integrated into sections on every page.
+All sections must be centered (container mx-auto), but content within sections should NOT be centered—only the section container itself.
+Before starting, document all business information and requirements in requirements.md.
+
+
 ### Business Information
 - **Company/Project Name**: [Your name]
 - **Industry**: [Industry/type]
