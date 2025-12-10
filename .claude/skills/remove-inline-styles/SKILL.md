@@ -35,6 +35,44 @@ See references/cleanup-rules.md for complete list.
 **Text colors on headings:**
 - bg-muted-foreground (when used with bg-clip-text)
 
+**Button styles:**
+- Any custom button style which is not from the <Button> component
+- e.g., bg-*, text-*, p-*, m-* on buttons
+
+## Border-Radius Classes to REMOVE
+
+Remove from ALL elements (div, img, section, span, etc.):
+
+**Standard rounded classes:**
+- `rounded-sm`, `rounded`, `rounded-md`, `rounded-lg`, `rounded-xl`, `rounded-2xl`, `rounded-3xl`, `rounded-full`
+
+**Directional rounded classes:**
+- `rounded-t-*`, `rounded-b-*`, `rounded-l-*`, `rounded-r-*`
+- `rounded-tl-*`, `rounded-tr-*`, `rounded-bl-*`, `rounded-br-*`
+
+**Arbitrary values:**
+- `rounded-[*]` (any custom values like `rounded-[0.75rem]`)
+
+**KEEP these border classes:**
+- `border` (basic border)
+- `border-border` (uses CSS variable)
+
+**WHY:** Border-radius is controlled globally via `--radius` in globals.css
+
+### Border Cleanup Example
+
+```tsx
+// BEFORE
+<div className="rounded-lg border p-4">
+<img className="rounded-xl w-full" />
+<section className="rounded-2xl bg-muted">
+
+// AFTER
+<div className="border p-4">
+<img className="w-full" />
+<section className="bg-muted">
+```
+
 ## Classes to KEEP
 
 **Layout:**
@@ -54,7 +92,7 @@ See references/cleanup-rules.md for complete list.
 
 **Other:**
 - w-*, h-*, max-w-*, min-h-*
-- border-*, rounded-*
+- border-*
 - transition-*, animate-*, duration-*
 - relative, absolute, fixed, sticky
 

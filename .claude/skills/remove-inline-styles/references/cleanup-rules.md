@@ -45,13 +45,29 @@ bg-clip-text text-transparent bg-gradient-to-r bg-gradient-to-l
 bg-muted-foreground (when on heading text)
 ```
 
-**Borders & Rounded:**
+**Border-Radius (REMOVE from ALL elements):**
 
-All borders should have the global styling of globals.css
-Remove anything custom on headings, divs, images etc.
+All border-radius should be controlled via `--radius` in globals.css.
+Remove ALL rounded-* classes from divs, images, sections, spans, etc.
 
 ```
-rounded rounded-sm rounded-md rounded-lg rounded-xl etc.
+# Standard rounded classes
+rounded-sm rounded rounded-md rounded-lg rounded-xl rounded-2xl rounded-3xl rounded-full
+
+# Directional rounded (top, bottom, left, right)
+rounded-t-sm rounded-t rounded-t-md rounded-t-lg rounded-t-xl rounded-t-2xl rounded-t-full
+rounded-b-sm rounded-b rounded-b-md rounded-b-lg rounded-b-xl rounded-b-2xl rounded-b-full
+rounded-l-sm rounded-l rounded-l-md rounded-l-lg rounded-l-xl rounded-l-2xl rounded-l-full
+rounded-r-sm rounded-r rounded-r-md rounded-r-lg rounded-r-xl rounded-r-2xl rounded-r-full
+
+# Corner-specific rounded (top-left, top-right, bottom-left, bottom-right)
+rounded-tl-sm rounded-tl rounded-tl-md rounded-tl-lg rounded-tl-xl rounded-tl-2xl rounded-tl-full
+rounded-tr-sm rounded-tr rounded-tr-md rounded-tr-lg rounded-tr-xl rounded-tr-2xl rounded-tr-full
+rounded-bl-sm rounded-bl rounded-bl-md rounded-bl-lg rounded-bl-xl rounded-bl-2xl rounded-bl-full
+rounded-br-sm rounded-br rounded-br-md rounded-br-lg rounded-br-xl rounded-br-2xl rounded-br-full
+
+# Arbitrary values
+rounded-[0.75rem] rounded-[10px] rounded-[50%] (any custom value)
 ```
 
 **Buttons:**
@@ -109,11 +125,14 @@ bg-background bg-foreground bg-primary bg-secondary
 bg-accent bg-muted bg-card bg-popover bg-destructive
 ```
 
-**Borders & Rounded:**
+**Borders (KEEP these only):**
 
 ```
-border border-*
+border          # Basic border
+border-border   # Uses CSS variable for border color
 ```
+
+Note: Do NOT keep rounded-* classes - these are removed (see above)
 
 **Effects & Animations:**
 
