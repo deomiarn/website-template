@@ -122,19 +122,8 @@ Use consistent key structure:
 
 ## Links and Navigation
 
-Add internal links for each button or link using Next.js `<Link>` component.
-Ensure links point to localized pages or sections.
-
-The way to wrap buttons with links is:
-```
-<Button asChild>
-      <Link href="/login">Login</Link>
-</Button>
-```
-
-Include smooth scrolling for each page, add it to the layout if not already present.
-
-If link is on same page, smooth scroll should still work.
+See `/internal-links` command for connecting buttons to pages and sections.
+See `/smooth-scroll` command for smooth scrolling setup.
 
 ## Output
 
