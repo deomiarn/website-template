@@ -24,18 +24,30 @@ For each component in components/:
    - bg-muted-foreground with bg-clip-text
    - mb/mt/my/mx/ml/mr-spacing (e.g., mb-4, mb-6, mb-8, my-10, mt-12 etc.)
 
-2. **Keep these classes:**
+2. **Remove border-radius classes from ALL elements:**
+   - rounded-* (all variants: sm, md, lg, xl, 2xl, full, etc.)
+   - rounded-t-*, rounded-b-*, rounded-l-*, rounded-r-*
+   - rounded-tl-*, rounded-tr-*, rounded-bl-*, rounded-br-*
+   - Keep: `border`, `border-border`
+
+3. **Keep these classes:**
    - Layout: flex, grid, gap-*, items-*, justify-*
    - Responsive: sm:, md:, lg:, xl:
    - Spacing: p-*, m-*, px-*, py-*
    - Colors on containers: bg-muted, bg-primary
-   - Borders, animations, sizing
+   - Borders: border, border-border (NOT rounded-*)
+   - Animations, sizing
 
-3. **Fix heading hierarchy:**
+4. **Fix heading hierarchy:**
    - Ensure h1 → h2 → h3 → h4 order (no skipping)
    - Only ONE h1 per page (in hero section)
    - Section titles should be h2
    - Subsections should be h3
+
+5. **Fix button styles:**
+   - Remove any custom button styles (bg-*, text-*, p-*, m-*)
+   - Use <Button> component and its variants only
+
 
 Verify if all tasks are completed and no errors occur.
 

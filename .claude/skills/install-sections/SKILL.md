@@ -53,12 +53,12 @@ import { Hero145 } from '@/components/hero145'
 import { Feature139 } from '@/components/feature139'
 
 export default function Page() {
-  return (
-    <>
-      <Hero145 />
-      <Feature139 />
-    </>
-  )
+    return (
+        <>
+            <Hero145 />
+            <Feature139 />
+        </>
+    )
 }
 ```
 
@@ -73,20 +73,20 @@ Find all hardcoded strings in the section component.
 ```json
 // messages/de.json
 {
-  "hero": {
-    "title": "Willkommen",
-    "subtitle": "Beschreibung hier",
-    "cta": "Jetzt starten"
-  }
+	"hero": {
+		"title": "Willkommen",
+		"subtitle": "Beschreibung hier",
+		"cta": "Jetzt starten"
+	}
 }
 
 // messages/en.json
 {
-  "hero": {
-    "title": "Welcome",
-    "subtitle": "Description here",
-    "cta": "Get Started"
-  }
+	"hero": {
+		"title": "Welcome",
+		"subtitle": "Description here",
+		"cta": "Get Started"
+	}
 }
 ```
 
@@ -97,15 +97,15 @@ Find all hardcoded strings in the section component.
 import { useTranslations } from 'next-intl'
 
 export function Hero145() {
-  const t = useTranslations('hero')
+    const t = useTranslations('hero')
 
-  return (
-    <section>
-      <h1>{t('title')}</h1>
-      <p>{t('subtitle')}</p>
-      <button>{t('cta')}</button>
-    </section>
-  )
+    return (
+        <section>
+            <h1>{ t('title') }</h1>
+            <p>{ t('subtitle') }</p>
+            <button>{ t('cta') }</button>
+        </section>
+    )
 }
 ```
 
@@ -124,6 +124,13 @@ Use consistent key structure:
 
 Add internal links for each button or link using Next.js `<Link>` component.
 Ensure links point to localized pages or sections.
+
+The way to wrap buttons with links is:
+```
+<Button asChild>
+      <Link href="/login">Login</Link>
+</Button>
+```
 
 Include smooth scrolling for each page, add it to the layout if not already present.
 

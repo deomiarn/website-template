@@ -34,6 +34,8 @@ description: Step 02 - Install shadcnblocks sections and implement i18n for a pa
 
 5. Ensure 'use client' is added if using hooks
 
+6. Ensure navbar and footer are global in app/[locale]/layout.tsx if not already done
+
 6. Links and buttons should use Next.js <Link> component for navigation
 
 7. All internal links from buttons or else should link to other localized pages or sections in the same page
