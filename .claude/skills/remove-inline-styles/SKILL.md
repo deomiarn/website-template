@@ -22,6 +22,7 @@ See references/cleanup-rules.md for complete list.
 **Typography sizes:**
 - text-4xl, text-5xl, text-6xl, text-7xl
 - text-3xl, text-2xl, text-xl, text-lg
+- uppercase, lowercase, capitalize
 
 **Font weights:**
 - font-bold, font-semibold, font-medium, font-light
@@ -41,7 +42,7 @@ See references/cleanup-rules.md for complete list.
 
 ## Border-Radius Classes to REMOVE
 
-Remove from ALL elements (div, img, section, span, etc.):
+Remove from MOST elements (div, img, section, span, cards, etc.):
 
 **Standard rounded classes:**
 - `rounded-sm`, `rounded`, `rounded-md`, `rounded-lg`, `rounded-xl`, `rounded-2xl`, `rounded-3xl`, `rounded-full`
@@ -53,11 +54,30 @@ Remove from ALL elements (div, img, section, span, etc.):
 **Arbitrary values:**
 - `rounded-[*]` (any custom values like `rounded-[0.75rem]`)
 
+## EXCEPTIONS - Keep rounded-* on:
+
+**Buttons (button.tsx):**
+- Keep all rounded-* classes on buttons
+- Different variants need different radii (pill buttons = rounded-full)
+- Button styling is controlled in button.tsx, not globals.css
+
+**Avatars (avatar.tsx):**
+- Keep `rounded-full` on avatar components
+- Avatars are always circular by design convention
+
 **KEEP these border classes:**
 - `border` (basic border)
 - `border-border` (uses CSS variable)
 
 **WHY:** Border-radius is controlled globally via `--radius` in globals.css
+The CSS rules in globals.css automatically apply correct border-radius to:
+- Cards and containers (--radius-lg)
+- Images (--radius-md)
+- Badges (--radius-sm)
+- Inputs (--radius-md)
+- Accordion items (--radius-md)
+- Navigation menus (--radius-sm)
+- Popovers and dialogs (--radius-lg)
 
 ### Border Cleanup Example
 
