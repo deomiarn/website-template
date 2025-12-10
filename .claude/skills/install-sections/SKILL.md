@@ -27,7 +27,17 @@ pnpm dlx shadcn add @shadcnblocks/feature139
 pnpm dlx shadcn add @shadcnblocks/pricing1
 ```
 
+If sections are navbar or footer, ensure only one instance per project and add it in the layout if not already present.
+
 Sections are installed to `components/` directory.
+Do not move components in subdirectories.
+Do not create custom components, only modify installed ones for i18n.
+
+## Reuse of Components
+
+If a section is already installed from a previous page, do not reinstall.
+Simply import and use the existing component.
+Make it reusable across pages by ensuring no hardcoded text remains.
 
 ## Page Structure
 
@@ -102,12 +112,22 @@ export function Hero145() {
 ## Key Naming Convention
 
 Use consistent key structure:
+
 - `{section}.title`
 - `{section}.subtitle`
 - `{section}.description`
 - `{section}.cta`
 - `{section}.items.0.title`
 - `{section}.items.0.description`
+
+## Links and Navigation
+
+Add internal links for each button or link using Next.js `<Link>` component.
+Ensure links point to localized pages or sections.
+
+Include smooth scrolling for each page, add it to the layout if not already present.
+
+If link is on same page, smooth scroll should still work.
 
 ## Output
 

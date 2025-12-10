@@ -51,3 +51,5 @@ For each image in the page:
 - **Prompt:**
 [ready-to-copy MJ V7 prompt with flags]
 ```
+
+Save the output in docs/midjourney-prompts/[page-name]-prompts.md.
