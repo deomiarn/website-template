@@ -33,11 +33,16 @@ Must replace ALL variables in :root and .dark:
 - --chart-1 through --chart-5
 - --radius
 
-
 ## Border Radius
 
 Set --radius based on input (e.g., 0.625rem for modern/rounded, 0.25rem for minimal/sharp).
+Add ".border" and "img" class in globals.css if not present:
 
+```css
+.border, img {
+    border-radius: var(--radius);
+}
+```
 
 ## Typography Requirements
 
@@ -47,8 +52,49 @@ Add styles for:
 
 - h1, h2, h3, h4, h5, h6
 - p (paragraph)
-- a (links)
 - blockquote
+
+## Link Styling
+
+**IMPORTANT:** Links should NOT have global underline or primary color styling.
+
+**Do NOT add:**
+
+```css
+a {
+    @apply text-primary underline-offset-4 hover:underline;
+}
+```
+
+**Instead:** Remove `<a>` styling from globals.css entirely. Components (navbar, footer, content) handle their own link
+styles. This prevents nav/footer links from inheriting unwanted colors or underlines.
+
+## List Styling
+
+Lists should only have bullets in prose/content areas (blog posts, articles, etc.).
+
+**Do:**
+
+```css
+.prose ul {
+    @apply list-disc pl-6;
+}
+
+.prose ol {
+    @apply list-decimal pl-6;
+}
+```
+
+**Do NOT:**
+
+```css
+ul {
+    @apply list-disc;
+    /* This affects nav/footer lists! */
+}
+```
+
+Scoping list styles to `.prose` prevents bullet points from appearing in navigation menus and footer link lists.
 
 **Font Requirements:**
 

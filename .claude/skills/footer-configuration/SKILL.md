@@ -102,6 +102,34 @@ import Link from "next/link";
 </a>
 ```
 
+## List Styling
+
+Footer lists must NOT have bullet points. Always add `list-none p-0`:
+
+```tsx
+<ul className="list-none space-y-3 p-0">
+  {links.map((link) => (
+    <li key={link.text}>
+      <Link href={link.url} className="text-sm text-foreground/70 hover:text-foreground transition-colors">
+        {link.text}
+      </Link>
+    </li>
+  ))}
+</ul>
+```
+
+## Link Colors
+
+Use `text-foreground` or opacity variants, NOT `text-primary`:
+
+- `text-foreground/70` - muted links
+- `hover:text-foreground` - hover state (full opacity)
+- `text-foreground/60` - subtle text like copyright
+
+**Do NOT use:**
+- `text-primary` (reserved for CTA buttons, not navigation)
+- `hover:underline` (no underlines)
+
 ## SEO Importance
 
 All pages MUST be linked in footer for:

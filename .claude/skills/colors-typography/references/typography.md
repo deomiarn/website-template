@@ -66,9 +66,7 @@ p {
     @apply text-base leading-relaxed text-muted-foreground;
 }
 
-a {
-    @apply text-primary underline-offset-4 hover:underline;
-}
+/* No global link styles - components handle their own */
 
 blockquote {
     @apply border-l-4 border-primary pl-4 italic text-muted-foreground;
