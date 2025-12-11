@@ -9,7 +9,11 @@ Install shadcnblocks sections and implement i18n for a page.
 
 ## Workflow
 
-1. **Install Sections** - Run pnpm dlx shadcn add for each section in order
+1. **Install Sections** - Install only NEW sections
+   - Check if component file exists in `components/`
+   - If exists: Skip installation, reuse existing component
+   - If new: Run `pnpm dlx shadcn add @shadcnblocks/[section]`
+   - **Never overwrite existing files**
 2. **Create Page File** - Create/update app/[locale]/[route]/page.tsx
 3. **Import Sections** - Import all installed components
 4. **Arrange Sections** - Place in order as specified
@@ -32,6 +36,34 @@ If sections are navbar or footer, ensure only one instance per project and add i
 Sections are installed to `components/` directory.
 Do not move components in subdirectories.
 Do not create custom components, only modify installed ones for i18n.
+
+## Preserving Existing Components
+
+**CRITICAL: Never overwrite existing components.**
+
+When `shadcn add` prompts about existing files, always choose to KEEP the existing version.
+
+### Protected Components (if they exist):
+- `components/ui/button.tsx` - Custom button styles from /init
+- `components/ui/*.tsx` - Any existing UI components
+- `components/*.tsx` - Any existing block components
+
+### Installation Rule:
+1. Before running `pnpm dlx shadcn add`, check if the component already exists
+2. If component exists in `components/`, skip installation and reuse existing
+3. Only install components that don't exist yet
+
+### Example:
+```bash
+# Check if hero145 exists
+# If components/hero145.tsx exists → Skip, reuse existing
+# If not → Install with: pnpm dlx shadcn add @shadcnblocks/hero145
+```
+
+### Handling shadcn Prompts:
+When shadcn asks about overwriting:
+- Always select "No" / "Keep existing"
+- Never overwrite custom-styled components
 
 ## Reuse of Components
 

@@ -167,6 +167,19 @@ Use `smooth-scroll` skill.
 
 ---
 
+### Step 8: Page Transitions
+
+Use `page-transitions` skill.
+
+**Input:** None
+
+**Output:**
+- PageTransition component at `components/ui/page-transition.tsx`
+- Locale layout updated with transition wrapper
+- Smooth fade between page navigations
+
+---
+
 ## After Init
 
 Project foundation is ready. Now build pages:
@@ -190,3 +203,4 @@ Repeat for each page in docs/sitemap.md.
 | 5 | navbar component | Navigation with all pages |
 | 6 | footer component | Links, contact, social |
 | 7 | globals.css | Smooth scroll behavior |
+| 8 | page-transition.tsx | Smooth page transitions |
