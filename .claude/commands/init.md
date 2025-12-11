@@ -151,6 +151,9 @@ Facebook URL: (optional)
 
 ---
 
+### Step 6.1: Add Navbar and Footer to Layout
+Modify `app/layout.tsx` to include navbar and footer components around the main content.
+
 ### Step 7: Smooth Scroll
 
 Use `smooth-scroll` skill.

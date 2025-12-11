@@ -57,6 +57,41 @@ import Link from "next/link";
 </a>
 ```
 
+## Link Styling
+
+Navigation links should be simple text without button-like effects.
+
+**IMPORTANT:** The shadcn `NavigationMenuLink` component has built-in `hover:bg-accent` styling. You MUST override this on the wrapper AND style the inner Link:
+
+```tsx
+<NavigationMenuLink asChild className="bg-transparent hover:bg-transparent focus:bg-transparent rounded-none p-0">
+  <Link
+    href={item.url}
+    className="text-sm font-medium text-foreground hover:text-foreground/70 transition-colors px-3 py-2"
+  >
+    {item.title}
+  </Link>
+</NavigationMenuLink>
+```
+
+**On NavigationMenuLink (wrapper):**
+- `bg-transparent` - removes default background
+- `hover:bg-transparent` - removes hover background
+- `focus:bg-transparent` - removes focus background
+- `rounded-none` - removes rounded corners
+- `p-0` - removes padding (apply to Link instead)
+
+**On Link (inner):**
+- `text-foreground` - default text color (NOT `text-primary`)
+- `hover:text-foreground/70` - subtle opacity on hover
+- `px-3 py-2` - spacing for click area
+
+**Do NOT use on nav links:**
+- `text-primary` (use `text-foreground` instead)
+- `hover:bg-muted` or `hover:bg-accent` (no background on hover)
+- `hover:underline` (no underline)
+- `rounded-md` (no rounded corners)
+
 ## Z-Index Fix
 
 ### Dropdown Content
