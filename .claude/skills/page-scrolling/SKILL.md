@@ -1,9 +1,9 @@
 ---
-name: smooth-scroll
+name: page-scrolling
 description: Add smooth scrolling for same-page anchor links only. Uses JavaScript to handle #anchor clicks while page navigations remain instant. Add to layout once, works across all pages.
 ---
 
-# Smooth Scroll
+# Page Scrolling
 
 Enable smooth scrolling for same-page anchor links only. Page navigations always start at the top instantly.
 
@@ -15,23 +15,23 @@ CSS `scroll-behavior: smooth` affects ALL scrolling, including Next.js page navi
 
 ## Workflow
 
-1. **Create SmoothScroll Component** - JavaScript handler for anchor links
+1. **Create PageScrolling Component** - JavaScript handler for anchor links
 2. **Add to Layout** - Include component in locale layout
 3. **Update globals.css** - Keep only `scroll-padding-top`, remove `scroll-behavior`
 4. **Test** - Verify anchor links smooth scroll, page changes are instant
 
 ## Implementation
 
-### Step 1: Create SmoothScroll Component
+### Step 1: Create PageScrolling Component
 
-Create `website/components/ui/smooth-scroll.tsx`:
+Create `website/components/ui/page-scrolling.tsx`:
 
 ```tsx
 "use client";
 
 import { useEffect } from "react";
 
-export function SmoothScroll() {
+export function PageScrolling() {
   useEffect(() => {
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia(
@@ -66,10 +66,10 @@ export function SmoothScroll() {
 
 ### Step 2: Add to Layout
 
-Add SmoothScroll to `app/[locale]/layout.tsx`:
+Add PageScrolling to `app/[locale]/layout.tsx`:
 
 ```tsx
-import { SmoothScroll } from "@/components/ui/smooth-scroll";
+import { PageScrolling } from "@/components/ui/page-scrolling";
 
 export default function LocaleLayout({
   children,
@@ -78,7 +78,7 @@ export default function LocaleLayout({
 }) {
   return (
     <>
-      <SmoothScroll />
+      <PageScrolling />
       {/* rest of layout */}
     </>
   );
@@ -164,7 +164,7 @@ This is respected by `scrollIntoView()`.
 
 ## Checklist
 
-- [ ] `SmoothScroll` component created at `components/ui/smooth-scroll.tsx`
+- [ ] `PageScrolling` component created at `components/ui/page-scrolling.tsx`
 - [ ] Component added to `app/[locale]/layout.tsx`
 - [ ] `scroll-padding-top` set in globals.css
 - [ ] NO `scroll-behavior: smooth` in globals.css
@@ -176,6 +176,6 @@ This is respected by `scrollIntoView()`.
 ## Output
 
 After running this skill:
-- `components/ui/smooth-scroll.tsx` - Anchor link handler
-- `app/[locale]/layout.tsx` - Updated with SmoothScroll
+- `components/ui/page-scrolling.tsx` - Anchor link handler
+- `app/[locale]/layout.tsx` - Updated with PageScrolling
 - `globals.css` - Only scroll-padding-top, no scroll-behavior
