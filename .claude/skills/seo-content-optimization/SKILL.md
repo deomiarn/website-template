@@ -15,10 +15,10 @@ Optimize page content for target keywords to rank on Google.
 ## Workflow
 
 1. **Read SEO Analysis** - Get target keywords for this page from docs/seo-analysis.md
-2. **Analyze Current Content** - Review existing text in components and i18n files
+2. **Analyze Current Content** - Review existing page, text in components and i18n files
 3. **Optimize H1** - Ensure primary keyword is in H1 (naturally)
 4. **Optimize Headings** - Include keywords in H2/H3 where relevant
-5. **Optimize Body Text** - Integrate keywords naturally (1-2% density)
+5. **Optimize Body Text** - Integrate keywords naturally (max. 0.8% density)
 6. **Optimize Meta** - Title tag and meta description with keywords
 7. **Update i18n** - Apply changes to de.json and en.json
 
@@ -72,7 +72,7 @@ For the page you're optimizing, note:
 - Follow the specific recommendations from seo-analysis.md
 
 **DON'T:**
-- Keyword stuff (max 1-2% density)
+- Keyword stuff (max. 0.8% density)
 - Force unnatural phrasing
 - Repeat exact keyword excessively
 - Sacrifice readability for SEO
@@ -163,13 +163,13 @@ Example: `Professionelles Webdesign in Zürich für KMUs. Handcodierte Websites 
 
 ## Keyword Density Check
 
-Target: 1-2% keyword density
+Target: max. 0.8% keyword density
 
 Formula: `(keyword count / total words) × 100`
 
 For a 500-word page targeting "Webdesign Zürich":
-- Minimum: 5 mentions (1%)
-- Maximum: 10 mentions (2%)
+- Max occurrences = 0.008 × 500 = 4 times
+- Use variations and synonyms to avoid stuffing:
 - Include variations: "Webdesign in Zürich", "Zürcher Webdesign", "Website Zürich"
 
 ## Output
